@@ -1,4 +1,4 @@
-import express, { json } from "express";
+import express from "express";
 import { signToken } from "../functions/tokenAuthentication";
 
 const router = express.Router();
@@ -8,7 +8,7 @@ const ID = "1";
 const EMAIL = "email@gmail.com";
 const PASSWORD = "password";
 
-router.post("/login", (req, res, next) => {
+router.post("/login", (req, res) => {
   const { email, password } = req.body;
 
   //authenticate
@@ -23,7 +23,7 @@ router.post("/login", (req, res, next) => {
 
   //send token
   const token = signToken(ID);
-  return res.json(token);
+  res.json(token);
   //send token
 });
 
