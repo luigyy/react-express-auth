@@ -1,12 +1,8 @@
 import jwt from "jsonwebtoken";
 const secret = "mysupersecret"; //save this in .env
 //
-export function decodeToken(token: string) {
-  const data = jwt.decode(token);
-  return data;
-}
 
-export function veriyToken(token: string) {
+export function verifyToken(token: string) {
   const payload = jwt.verify(token, secret);
   return payload;
 }
@@ -22,3 +18,6 @@ export function signToken(id: string) {
   );
   return token;
 }
+
+// const invalidToken =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QifQ.iRY-uZVdjHV2JRe7AZ_IT4uz-xHlvpJAPFMkapHIcOY";
