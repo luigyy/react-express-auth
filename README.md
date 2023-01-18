@@ -1,2 +1,2 @@
 # react-express-session
-examplem of how to implement sessions in react using express and jwt tokens for authentication.
+example of how to implement authorization using react and express with jwt.
